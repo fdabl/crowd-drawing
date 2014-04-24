@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Feelings</title>
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="lib/styles.css">
+	<script type="text/javascript" src="lib/jquery-min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="lib/raphael-min.js"></script>
+	<script type="text/javascript" src="lib/json2.js"></script>
+	<script type="text/javascript" src="lib/raphael.sketchpad.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+	<h1>Draw your feelings!</h1>
+	<div id="editor"></div>
+
+	<div class="buttons">
+		<div class="custom-drawing">
+			<button class="btn-lg" data-do="red">Red</button>
+			<button class="btn-lg" data-do="green">Green</button>
+			<button class="btn-lg" data-do="blue">Blue</button>
+			<button class="btn-lg btn-success" data-do="thicker" >thicker</button>
+			<button class="btn-lg btn-success" data-do="thinner" >thinner</button>
+		</div>
+
+		<div class="manage">
+			<button class="btn-lg btn-danger" data-do="clear">Clear</button>
+			<button class="btn-lg btn-danger" data-do="undo">Undo</button>
+		</div>
+
+		<div class="submit">
+			<button class="btn-lg btn-success" data-do="submit">Submit</button>
+		</div>
+
+		<hr>
+		<button class="btn-ls btn-danger" data-do="inspire">get inspiration</button>
+	</div>
+
+	<div class="information">
+		<p>Draw how you feel right now! Click Submit if you are finished.</p>
+		<p>Have fun :)</p>
+	</div>
+
+	<div id="viewer"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

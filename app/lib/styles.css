@@ -1,0 +1,28 @@
+.custom-drawing, .manage, .submit { 
+	margin-top: 4px;
+}
+
+#editor {
+	border: 1px dashed green;
+}
+
+.buttons { 
+	color: white;
+}
+
+[data-do="red"] {
+	background: red;
+}
+
+[data-do="blue"] {
+	background: blue;
+}
+
+[data-do="green"] {
+	background: green;
+}
+
+.information {
+	font-size: 30px;
+	text-align: right;
+}

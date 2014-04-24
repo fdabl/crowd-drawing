@@ -1,0 +1,20 @@
+{
+  "name": "crowd-draw",
+  "version": "0.0.0",
+  "description": "Simple drawing app for the efpsa2014 workshop about crowdsourcing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dostodabsi/crowd-drawing"
+  },
+  "author": "Fabian Dablander",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.0.2",
+    "express": "^4.0.0",
+    "nano": "^5.7.1"
+  }
+}
