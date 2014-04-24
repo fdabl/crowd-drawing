@@ -5,7 +5,7 @@ $(function() {
     , manage  = ['clear', 'undo']
     , colors  = ['red', 'green', 'blue']
     , inspired = false
-    , count = 0 // count the current image
+    , count = 0 // count for the current image
     , wrap // len of drawings, for modulo
     , inspiration // for sketchpad viewer
     , drawings; // for all drawings
@@ -77,6 +77,9 @@ $(function() {
       count += 1;
       inspiration.strokes(drawings[count % wrap]);
     }
+
+    var height = $(document).height();
+    $('html, body').animate({ scrollTop: height }, 1000);
   };
 
   var endExperiment = function() {

@@ -13,13 +13,11 @@ exports.saveDrawing = function(req, res, next) {
 };
 
 exports.getDrawings = function(req, res, next) {
-  db.view('drawings', 'getAll', function(err, body) {
-    if (err) return next(err);
+  db.list({ include_docs: true }, function(err, body) {
 
-    var drawings = body.rows.map(function(doc) {
-      return doc.value.drawing;
+    var drawings = body.rows.map(function(obj) {
+      return obj.doc.drawing;
     });
-
     res.send(drawings);
   });
 };
