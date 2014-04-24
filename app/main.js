@@ -5,6 +5,8 @@ $(function() {
     , manage  = ['clear', 'undo']
     , colors  = ['red', 'green', 'blue']
     , inspired = false
+    , count = 0 // count the current image
+    , wrap // len of drawings, for modulo
     , inspiration // for sketchpad viewer
     , drawings; // for all drawings
 
@@ -23,21 +25,18 @@ $(function() {
     if (data === 'submit') {
       endExperiment();
     }
-
     else if (data === 'inspire') {
       inspire();
     }
-
     else if (contains(colors, data)) {
       color(data);
     }
-
     else if (contains(manage, data)) {
       change(data);
     }
-
     else { changeWidth(data); }
   });
+
 
   var color = function(color) {
     sketchpad.pen().color(color);
@@ -61,19 +60,23 @@ $(function() {
     if (!inspired) {
       $.get('/exp', function(allDrawings) {
 
+        wrap = allDrawings.length;
         drawings = allDrawings;
         inspired = true;
 
         inspiration = Raphael.sketchpad('viewer',
           { width: editor.width()
           , height: 600
-          , strokes: drawings.shift()
+          , strokes: drawings[0]
           , editing: false
         });
       });
     }
 
-    else { inspiration.strokes(drawings.shift()); }
+    else {
+      count += 1;
+      inspiration.strokes(drawings[count % wrap]);
+    }
   };
 
   var endExperiment = function() {
