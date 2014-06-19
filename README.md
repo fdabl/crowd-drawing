@@ -1,33 +1,18 @@
 # Crowd-Drawing
 
 Implements a simple drawing app. It was written for my workshop about *Crowdsourcing and the Interwebs*, held at the EFPSA 2014 [Congress](http://more.efpsa.org/congress2014/) in Romania.
+You can check out the workshop materials themselves [here](https://workshop.dablscience.org). It gets you up to speed with online experiments and crowdsourcing your research.
 This little freudian experiment was inspired by [drawtogether](https://github.com/NYUCCL/drawtogether).
 
-To get the code, run
+Run the experiment with
 ```
 git clone https://github.com/dostodabsi/crowd-drawing
-```
-If you have Heroku not yet setup, run
-```
-heroku create
+cd crowd-drawing
+npm install
+
+node db/create.js # create the database
+node index.js # run the app on localhost:4000
 ```
 
-and to rename your app
-```
-heroku apps:rename your-awesome-name
-```
-
-to add the database layer
-```
-heroku addons:add cloudant
-```
-
-and to go live
-```
-git push heroku master
-```
-
-Your app is now on the Interwebs, look at it with
-```
-heroku open
-```
+# LICENCE
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
